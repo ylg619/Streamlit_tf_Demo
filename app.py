@@ -6,11 +6,15 @@ import os
 
 @st.cache(allow_output_mutation=True)
 def load_model_cache():
-    model = load_model(os.path.join(os.path.curdir,'autoencoder.h5'))
+    PATH = os.path.join(os.path.curdir,'autoencoder.h5')
+    model=None
+    if os.path.exists(PATH):
+        model = load_model(PATH)
     return model
 
 model = load_model_cache()
-
+if model is None:
+    print("File not Found")
 
 uploaded_file = st.file_uploader("Gimme  image", type=["png", "jpg", "jpeg"])
 res = None

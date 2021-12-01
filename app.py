@@ -8,13 +8,13 @@ import os
 @st.cache(allow_output_mutation=True,suppress_st_warning=True)
 def load_model_cache():
     path_folder = os.path.dirname(__file__)
+    model=None
     #model = load_model(os.path.join(path_folder,'autoencoder.h5'))
     if os.path.exists(os.path.join(path_folder,'autoencoder.h5')):
-        return True
-    return False
+        model = load_model(os.path.join(path_folder,'autoencoder.h5'))
+    return model
 
 model = load_model_cache()
-st.write(model)
 
 
 uploaded_file = st.file_uploader("Gimme  image", type=["png", "jpg", "jpeg"])

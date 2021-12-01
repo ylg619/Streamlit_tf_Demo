@@ -4,12 +4,11 @@ streamlit-webrtc==0.31.3
 av
 
 #for Deep learning model
-tensorflow==2.6.1
+tensorflow==2.5.1
 
 #Image
 Pillow
 
 #other
-matplotlib
-numpy
+numpy==1.19.5
 

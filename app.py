@@ -2,10 +2,13 @@ import streamlit as st
 import numpy as np
 from PIL import Image
 from tensorflow.keras.models import load_model
+import os
+
 
 @st.cache(allow_output_mutation=True,suppress_st_warning=True)
 def load_model_cache():
-    model = load_model('autoencoder.h5')
+    path_folder = os.path.dirname(__file__)
+    model = load_model(os.path.join(path_folder,'autoencoder.h5'))
     return model
 
 model = load_model_cache()

@@ -4,7 +4,7 @@ streamlit-webrtc==0.31.3
 av
 
 #for Deep learning model
-tensorflow
+tensorflow==2.6.1
 
 #Image
 Pillow

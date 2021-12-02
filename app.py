@@ -10,8 +10,8 @@ def load_model_cache():
     path_folder = os.path.dirname(__file__)
     model=None
     #model = load_model(os.path.join(path_folder,'autoencoder.h5'))
-    if os.path.exists(os.path.join(path_folder,'autoencoder.h5')):
-        model = load_model(os.path.join(path_folder,'autoencoder.h5'))
+    #if os.path.exists(os.path.join(path_folder,'autoencoder.h5')):
+    model = load_model(os.path.join(path_folder,'autoencoder'))
     return model
 
 model = load_model_cache()

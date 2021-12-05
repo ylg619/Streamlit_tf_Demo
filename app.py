@@ -26,7 +26,7 @@ image=None
 if uploaded_file:
     image = Image.open(uploaded_file)
     st.image(image)
-    imgArray = np.array(image.convert("L").reshape(28,28,1) /255. #reshape PNG file to get one channel + rescale
+    imgArray = np.array(image.convert("L")).reshape(28,28,1) /255. #reshape PNG file to get one channel + rescale
     
 
 if st.button('Predict'):

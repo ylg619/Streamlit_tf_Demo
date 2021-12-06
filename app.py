@@ -29,7 +29,9 @@ if uploaded_file:
     img = img.resize((28,28)) #resize (28,28)
     st.image(img)
     imgArray = np.array(img).reshape(28,28,1) /255. #convert/resize and reshape PNG file to get one channel + rescale
-    
+    if not imgArray.sum() >0:
+        image = None
+        st.write("Invalid Image")
 
 if st.button('Predict'):
     # Send to API, endpoint must accept POST
